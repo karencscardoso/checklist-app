@@ -1,0 +1,7 @@
+.footer-container {
+  justify-content: flex-end;
+}
+
+.footer-container span {
+  font-size: 14px;
+}

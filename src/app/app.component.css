@@ -1,5 +1,4 @@
 .main-container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -16,21 +15,4 @@ a {
 
 a:hover {
   font-size: 18px;
-}
-
-.borderBlue {
-  border: 1px solid blue;
-}
-
-.borderYel {
-  border: 1px solid yellow;
-}
-
-.borderCya {
-  border: 1px solid cyan;
-  flex-shrink: 0;
-}
-
-.hv-100p {
-  height: 100%;
 }

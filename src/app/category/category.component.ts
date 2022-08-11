@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CategoryEditComponent } from '../category-edit/category-edit.component';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Category } from '../_models/category';
 
@@ -28,7 +29,16 @@ export class CategoryComponent implements OnInit {
   }
 
   editCategory(category: Category) {
-    console.log('Categoria add');
+    this.dialog.open(CategoryEditComponent, { disableClose: true,
+      data: {edi: 'Tem certeza que desej?', leftButtonLabel: 'Atualizar', rightButtonLabel: 'Cancelar'} }).afterClosed().subscribe(
+      resp => {
+        if(resp) {
+          console.log('Cancelada!');
+        } else {
+        console.log('Categoria atualizada com sucesso!');
+        }
+      }
+    )
 
   }
 

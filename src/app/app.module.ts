@@ -11,6 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { CategoryEditComponent } from './category-edit/category-edit.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { DialogComponent } from './dialog/dialog.component';
     FooterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DialogComponent
+    DialogComponent,
+    CategoryEditComponent,
+    CategoryFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

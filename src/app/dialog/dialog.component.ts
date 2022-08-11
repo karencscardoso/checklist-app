@@ -11,12 +11,12 @@ export class DialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,) {
 
-      if (data.clickLeftButton != null) {
-        this.clickLeftButton = data.leftButtonLabel;
+      if (data.leftButtonLabel != null) {
+        this.leftButtonLabel = data.leftButtonLabel;
       }
 
-      if (data.clickLeftButton != null) {
-        this.clickLeftButton = data.leftButtonLabel;
+      if (data.rightButtonLabel != null) {
+        this.rightButtonLabel = data.rightButtonLabel;
       }
 
       if (data.dialogMsg != null) {
@@ -36,6 +36,6 @@ export class DialogComponent implements OnInit {
   }
 
   clickRightButton() {
-    this.dialogRef.close(false);
+    this.dialogRef.close(true);
   }
 }

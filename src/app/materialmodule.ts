@@ -5,6 +5,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -13,7 +16,10 @@ import {MatDividerModule} from '@angular/material/divider';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    MatTableModule,
+    MatCardModule
   ],
   exports: [
     MatToolbarModule,
@@ -21,7 +27,10 @@ import {MatDividerModule} from '@angular/material/divider';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    MatTableModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }

@@ -10,3 +10,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ml-10 {
   margin-left: 10px;
 }
+
+.flx-cnter-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fl-evly {
+  justify-content: space-evenly;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.mr-10 {
+  margin-right: 10px !important;
+}

@@ -8,6 +8,10 @@
   right: 0;
 }
 
+.sidenav-container {
+  flex: 1;
+}
+
 a {
   color:black;
   text-decoration: none;

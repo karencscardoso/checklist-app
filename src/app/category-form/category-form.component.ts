@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-category-form',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryFormComponent implements OnInit {
 
-  constructor() { }
+  actionName = 'Editar';
+  categoryForm: FormGroup;
+
+  constructor(private formBuilder:FormBuilder) {
+
+    this.categoryForm = this.formBuilder.group({
+
+      name:''
+
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  save() {
+    console.log('Salvo!');
+
+  }
+
+  cancel() {
+    console.log('Cancelado');
+
   }
 
 }

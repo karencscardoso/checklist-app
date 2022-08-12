@@ -28,9 +28,9 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  editCategory(category: Category) {
+  editCategory(inputCategory: Category) {
     this.dialog.open(CategoryEditComponent, { disableClose: true,
-      data: {edi: 'Tem certeza que desej?', leftButtonLabel: 'Atualizar', rightButtonLabel: 'Cancelar'} }).afterClosed().subscribe(
+      data: {editableCategory: inputCategory} }).afterClosed().subscribe(
       resp => {
         if(resp) {
           console.log('Cancelada!');
@@ -44,12 +44,12 @@ export class CategoryComponent implements OnInit {
 
   deleteCategory(category: Category) {
     this.dialog.open(DialogComponent, { disableClose: true,
-      data: {dialogMsg: 'Tem certeza que deseja apagar esta categoria?', leftButtonLabel: 'Cancelar', rightButtonLabel: 'Sim'} }).afterClosed().subscribe(
+      data: {dialogMsg: 'Tem certeza que deseja apagar esta categoria?', leftButtonLabel: 'Sim', rightButtonLabel: 'Não'} }).afterClosed().subscribe(
       resp => {
         if(resp) {
-          console.log('Categoria apagada com sucesso!');
+          console.log('Categoria não apagada!');
         } else {
-        console.log('Categoria não apagada!');
+        console.log('Categoria apagada com sucesso!');
         }
       }
     )

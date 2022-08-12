@@ -9,21 +9,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class CategoryEditComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<CategoryEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,) {
-      if (data.leftButtonLabel != null) {
-        this.leftButtonLabel = data.leftButtonLabel;
-      }
+    @Inject(MAT_DIALOG_DATA) dilogData: any,) {
 
-      if (data.rightButtonLabel != null) {
-        this.rightButtonLabel = data.rightButtonLabel;
-      }
-
-      if (data.editgMsg != null) {
-        this.editMsg = data.editMsg;
-      }
     }
 
-  editMsg = 'Faça sua alteração!';
+  editMsg = '';
   leftButtonLabel = '';
   rightButtonLabel = ''
 

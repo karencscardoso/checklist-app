@@ -1,5 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Category } from '../_models/category';
 
 @Component({
   selector: 'app-category-edit',
@@ -8,25 +9,20 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class CategoryEditComponent implements OnInit {
 
+ @Input() editableCategory!: Category;
+  actionName: string = 'Editar'
+
   constructor(public dialogRef: MatDialogRef<CategoryEditComponent>,
-    @Inject(MAT_DIALOG_DATA) dilogData: any,) {
+    @Inject(MAT_DIALOG_DATA) dialogData: any,) {
 
+      if(dialogData.editableCategory != null) {
+        this.editableCategory = dialogData.editableCategory;
+      }
     }
-
-  editMsg = '';
-  leftButtonLabel = '';
-  rightButtonLabel = ''
 
   ngOnInit(): void {
   }
 
-  clickLeftButton(){
-    this.dialogRef.close(false);
-
-  }
-
-  clickRightButton() {
-    this.dialogRef.close(true);
-
-  }
+  closeModalWindow($event: any) {
+    if($event != null) this.dialogRef.close($event);  }
 }

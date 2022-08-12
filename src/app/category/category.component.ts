@@ -30,12 +30,12 @@ export class CategoryComponent implements OnInit {
 
   editCategory(inputCategory: Category) {
     this.dialog.open(CategoryEditComponent, { disableClose: true,
-      data: {editableCategory: inputCategory} }).afterClosed().subscribe(
+      data: { editableCategory: inputCategory } }).afterClosed().subscribe(
       resp => {
         if(resp) {
-          console.log('Cancelada!');
+          console.log('Categoria salvo com sucesso!!');
         } else {
-        console.log('Categoria atualizada com sucesso!');
+        console.log('Cancelada com sucesso!');
         }
       }
     )

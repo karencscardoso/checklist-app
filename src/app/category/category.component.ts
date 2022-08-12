@@ -23,8 +23,6 @@ export class CategoryComponent implements OnInit {
 
   constructor(private dialog: MatDialog) { }
 
-  showTitle = true;
-
   ngOnInit(): void {
   }
 
@@ -32,11 +30,7 @@ export class CategoryComponent implements OnInit {
     this.dialog.open(CategoryEditComponent, { disableClose: true,
       data: { editableCategory: inputCategory } }).afterClosed().subscribe(
       resp => {
-        if(resp) {
           console.log('Categoria salvo com sucesso!!');
-        } else {
-        console.log('Cancelada com sucesso!');
-        }
       }
     )
 
@@ -50,17 +44,14 @@ export class CategoryComponent implements OnInit {
           console.log('Categoria não apagada!');
         } else {
         console.log('Categoria apagada com sucesso!');
-        }
-      }
-    )
-
+        }})
   }
 
   createNewCategory() {
     console.log('Categoria inserida com sucesso!')
-  }
-  changeStatusTitle() {
-    if(this.showTitle) this.showTitle = false;
-    else this.showTitle = true;
-  }
+    this.dialog.open(CategoryEditComponent, { disableClose: true,
+      data: { actionName: 'Criar' } }).afterClosed().subscribe(
+      resp => {
+          console.log('Categoria criar fechada!!');
+      })}
 }

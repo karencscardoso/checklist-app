@@ -18,6 +18,9 @@ export class CategoryEditComponent implements OnInit {
       if(dialogData.editableCategory != null) {
         this.editableCategory = dialogData.editableCategory;
       }
+      if(dialogData.actionName != null) {
+        this.actionName = dialogData.actionName;
+      }
     }
 
   ngOnInit(): void {

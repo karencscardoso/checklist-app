@@ -1,0 +1,42 @@
+<div class="w-450">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ actionName }} Item do Checklist</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="checklistForm" #formDirective="ngForm">
+        <div class="flx-clm">
+          <mat-form-field appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <input matInput type="text" formControlName="description">
+            <mat-error *ngIf="checklistForm?.controls?.['description']?.errors?.['required']">Descrição é obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="category">
+              <mat-option *ngFor="let category of categories" [value]="category">{{ category.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="flx-cnter-row fl-evly">
+            <section>
+              <mat-checkbox formControlName="completed">Completo?</mat-checkbox>
+            </section>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Prazo</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="deadline">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+      <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

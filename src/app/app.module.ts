@@ -15,6 +15,8 @@ import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChecklistComponent } from './checklist/checklist.component';
+import { ChecklistEditComponent } from './checklist-edit/checklist-edit.component';
+import { ChecklistFormComponent } from './checklist-form/checklist-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ChecklistComponent } from './checklist/checklist.component';
     DialogComponent,
     CategoryEditComponent,
     CategoryFormComponent,
-    ChecklistComponent
+    ChecklistComponent,
+    ChecklistEditComponent,
+    ChecklistFormComponent
   ],
   imports: [
     BrowserModule,
